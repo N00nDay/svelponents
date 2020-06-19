@@ -4,6 +4,6 @@
 .DS_Store
 .vscode/
 .storybook/
-
+src/**/**/stories/
 demo/
 dist/
