@@ -1,0 +1,9 @@
+/node_modules/
+/public/build/
+
+.DS_Store
+.vscode
+.storybook
+/stories/
+/demo/
+/dist/
