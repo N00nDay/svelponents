@@ -53,10 +53,18 @@
     let close2 = true;
 </script>
 
-{#if close1}
-    <Alert type="success" message="Success Alert" onClose={() => (close1 = false)} />
-{/if}
-{#if close2}
-    <Alert type="info" message="Info Alert" description="Info Description Info Description Info Description" onClose={() => (close2 = false)} />
-{/if}
+<Alert type="success" message="Success Alert" onClose={() => (close1 = false)} show={close1} />
+<Alert type="info" message="Info Alert" description="Info Description Info Description Info Description" onClose={() => (close2 = false)} show={close2} />
+```
+
+## Close Text
+
+```html
+<script>
+    import { Alert } from 'svelponents';
+
+    let close3 = true;
+</script>
+
+<Alert type="success" message="Success Alert" closeText="Close Now" onClose={() => (close3 = false)} show={close3} />
 ```

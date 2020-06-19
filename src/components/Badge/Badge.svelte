@@ -5,7 +5,7 @@
   export let count = null;
   export let overflow = 99;
   export let dot = false;
-  export let color = "#f5222d";
+  export let color = undefined;
   export let showZero = false;
   export let style = undefined;
   export let offset = undefined;
@@ -14,7 +14,7 @@
 
   let hex = undefined,
     colorName = undefined;
-  if (color.charAt(0) === "#" || color.substring(0, 3) === "rgb") {
+  if (color && (color.charAt(0) === "#" || color.substring(0, 3) === "rgb")) {
     style = addStyle({
       style,
       attribute: true,

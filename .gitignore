@@ -3,7 +3,4 @@
 
 .DS_Store
 .vscode/
-.storybook/
-
-demo/
 dist/

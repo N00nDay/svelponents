@@ -9,6 +9,7 @@
 
   let close1 = true;
   let close2 = true;
+  let close3 = true;
 
   let headers = [
     {
@@ -184,6 +185,20 @@
       description="Info Description Info Description Info Description"
       onClose={() => (close2 = false)}
       show={close2} />
+  </Box>
+
+  <br />
+  <br />
+
+  <Title level={4}>Close Text</Title>
+
+  <Box>
+    <Alert
+      type="success"
+      message="Success Alert"
+      closeText="Close Now"
+      onClose={() => (close3 = false)}
+      show={close3} />
   </Box>
 
   <br />
