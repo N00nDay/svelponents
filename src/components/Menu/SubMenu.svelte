@@ -2,7 +2,7 @@
   import { getContext, onMount } from "svelte";
   import { CONTEXT } from "./Context.svelte";
   import { slide } from "svelte/transition";
-  import Icon from "../Icon.svelte";
+  import Icon from "../Icon/Icon.svelte";
 
   export let icon = undefined;
   export let disabled = false;

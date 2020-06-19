@@ -1,12 +1,13 @@
 <script>
   import { CONTEXT } from "./Context.svelte";
   import { getContext } from "svelte";
+  import ContentLoader from "../ContentLoader/ContentLoader.svelte";
   import debounce from "../../utils/debounce";
   export let style = undefined;
 
   let el;
 
-  const { tableContentHeight, heightUpdated } = getContext(CONTEXT);
+  const { tableContentHeight, heightUpdated, loading } = getContext(CONTEXT);
 
   const handle_resize = debounce(function() {
     heightUpdated();
@@ -27,5 +28,6 @@
   style="{style} height: {$tableContentHeight}px;"
   class="rows"
   bind:this={el}>
+  <ContentLoader {$loading} />
   <slot contentHeight={$tableContentHeight} />
 </ul>

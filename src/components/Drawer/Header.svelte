@@ -1,5 +1,5 @@
 <script>
-  import Icon from "../Icon.svelte";
+  import Icon from "../Icon/Icon.svelte";
   import { getContext } from "svelte";
   import { CONTEXT } from "./Context.svelte";
   export let style = undefined;

@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy, tick } from "svelte";
-  import SimpleBar from "./SimpleBar.svelte";
+  import SimpleBar from "../SimpleBar/SimpleBar.svelte";
   // props
   export let items;
   export let itemHeight = undefined;

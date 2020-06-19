@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import addWrapper from "../utils/addWrapper";
-  import setSize from "../utils/setSize";
+  import addWrapper from "../../utils/addWrapper";
+  import setSize from "../../utils/setSize";
   export let direction = "horizontal";
   export let align = undefined;
   export let justify = undefined;

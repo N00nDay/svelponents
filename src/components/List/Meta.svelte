@@ -1,8 +1,8 @@
 <script>
   import { getContext, onMount, onDestroy } from "svelte";
   import { CONTEXT } from "./Context.svelte";
-  import Avatar from "../Avatar.svelte";
-  import Icon from "../Icon.svelte";
+  import Avatar from "../Avatar/Avatar.svelte";
+  import Icon from "../Icon/Icon.svelte";
   import addStyle from "../../utils/addStyle";
   import tooltip from "../../utils/tooltip";
   import isEllipsis from "../../utils/isEllipsis";

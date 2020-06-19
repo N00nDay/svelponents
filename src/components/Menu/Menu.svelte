@@ -2,7 +2,7 @@
   import { CONTEXT } from "./Context.svelte";
   import { setContext, onMount } from "svelte";
   import { writable } from "svelte/store";
-  import Icon from "../Icon.svelte";
+  import Icon from "../Icon/Icon.svelte";
 
   export let style = undefined;
   export let theme = "light";

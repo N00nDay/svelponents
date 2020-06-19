@@ -2,8 +2,8 @@
 /public/build/
 
 .DS_Store
-.vscode
-.storybook
-/stories/
-/demo/
-/dist/
+.vscode/
+.storybook/
+src/**/**/stories/
+demo/
+dist/

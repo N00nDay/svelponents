@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { CONTEXT } from "./Context.svelte";
-  import Skeleton from "../Skeleton.svelte";
+  import Skeleton from "../Skeleton/Skeleton.svelte";
   export let title = undefined;
   export let description = undefined;
   export let style = undefined;

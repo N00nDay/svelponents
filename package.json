@@ -31,5 +31,20 @@
     "simplebar": "^5.2.0",
     "sirv-cli": "^0.4.4",
     "tippy.js": "^6.2.3"
-  }
+  },
+  "description": "*Attempt to port ant design to svelte*",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N00nDay/svelponents.git"
+  },
+  "keywords": [
+    "svelte",
+    "components"
+  ],
+  "author": "noonday",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N00nDay/svelponents/issues"
+  },
+  "homepage": "https://github.com/N00nDay/svelponents#readme"
 }

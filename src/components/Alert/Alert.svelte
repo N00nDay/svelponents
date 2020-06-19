@@ -11,6 +11,7 @@
   export let style = undefined;
   export let messageStyle = undefined;
   export let descriptionStyle = undefined;
+  export let show = true;
 </script>
 
 <style>
@@ -142,38 +143,40 @@
   }
 </style>
 
-<div
-  transition:slide|local
-  {style}
-  class="alert"
-  class:success={type === 'success'}
-  class:info={type === 'info'}
-  class:error={type === 'error'}
-  class:warning={type === 'warning'}
-  class:closable={onClose}
-  class:no-icon={!showIcon}
-  class:with-description={description}>
-  {#if showIcon}
-    <span class="icon">
-      <Icon
-        icon={`alert${type.charAt(0).toUpperCase() + type.slice(1)}`}
-        viewBox="64 64 896 896"
-        size={description ? 24 : 14} />
-    </span>
-  {/if}
-  <span class="message" style={messageStyle}>{message}</span>
-  {#if description}
-    <span class="description" style={descriptionStyle}>{description}</span>
-  {/if}
-  {#if onClose}
-    <button type="button" class="close-icon" tabindex="0" on:click={onClose}>
-      <span role="img" aria-label="close" class="anticon-close">
-        {#if closeText}
-          <span class="close-text">{closeText}</span>
-        {:else}
-          <Icon icon="close" size={18} />
-        {/if}
+{#if show}
+  <div
+    transition:slide|local
+    {style}
+    class="alert"
+    class:success={type === 'success'}
+    class:info={type === 'info'}
+    class:error={type === 'error'}
+    class:warning={type === 'warning'}
+    class:closable={onClose}
+    class:no-icon={!showIcon}
+    class:with-description={description}>
+    {#if showIcon}
+      <span class="icon">
+        <Icon
+          icon={`alert${type.charAt(0).toUpperCase() + type.slice(1)}`}
+          viewBox="64 64 896 896"
+          size={description ? 24 : 14} />
       </span>
-    </button>
-  {/if}
-</div>
+    {/if}
+    <span class="message" style={messageStyle}>{message}</span>
+    {#if description}
+      <span class="description" style={descriptionStyle}>{description}</span>
+    {/if}
+    {#if onClose}
+      <button type="button" class="close-icon" tabindex="0" on:click={onClose}>
+        <span role="img" aria-label="close" class="anticon-close">
+          {#if closeText}
+            <span class="close-text">{closeText}</span>
+          {:else}
+            <Icon icon="close" size={18} />
+          {/if}
+        </span>
+      </button>
+    {/if}
+  </div>
+{/if}

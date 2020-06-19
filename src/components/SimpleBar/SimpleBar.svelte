@@ -1,7 +1,7 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import SimpleBar from "simplebar";
-  import addStyle from "../utils/addStyle";
+  import addStyle from "../../utils/addStyle";
   export let classNames = undefined;
   export let id = undefined;
   export let style = undefined;

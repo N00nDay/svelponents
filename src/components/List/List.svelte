@@ -2,7 +2,7 @@
   import { CONTEXT } from "./Context.svelte";
   import { setContext, getContext } from "svelte";
   import { writable } from "svelte/store";
-  import ContentLoader from "../ContentLoader.svelte";
+  import ContentLoader from "../ContentLoader/ContentLoader.svelte";
 
   export let bordered = false;
   export let divider = true;

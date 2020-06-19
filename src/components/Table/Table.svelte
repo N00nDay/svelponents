@@ -24,6 +24,7 @@
   let columnHeaderHeight = writable(0);
   let tableContentHeight = writable(200);
   headers = writable(headers);
+  loading = writable(loading);
 
   function updateHeight() {
     let containerHeight = document.getElementById("main-content");
@@ -49,6 +50,7 @@
     bordered,
     headers,
     onSelect,
+    loading,
     registerHeader: () => {
       headerHeight.update(val => {
         let borders = bordered ? 1 : 0;
@@ -229,6 +231,6 @@
   class:lg={size === 'large'}
   class:hoverable
   class:bordered>
-  <ContentLoader {loading} />
+
   <slot />
 </div>

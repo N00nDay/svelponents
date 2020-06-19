@@ -1,7 +1,7 @@
 <script>
   import { getContext, onMount, afterUpdate } from "svelte";
   import { CONTEXT } from "./Context.svelte";
-  import Icon from "../Icon.svelte";
+  import Icon from "../Icon/Icon.svelte";
   import tooltip from "../../utils/tooltip";
 
   export let title = undefined;

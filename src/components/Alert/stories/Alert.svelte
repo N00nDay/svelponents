@@ -170,21 +170,20 @@
   <Title level={4}>Closable</Title>
 
   <Box>
-    {#if close1}
-      <Alert
-        type="success"
-        message="Success Alert"
-        onClose={() => (close1 = false)} />
-      <br />
-    {/if}
+    <Alert
+      type="success"
+      message="Success Alert"
+      onClose={() => (close1 = false)}
+      show={close1} />
     {#if close2}
-      <Alert
-        type="info"
-        message="Info Alert"
-        description="Info Description Info Description Info Description"
-        onClose={() => (close2 = false)} />
       <br />
     {/if}
+    <Alert
+      type="info"
+      message="Info Alert"
+      description="Info Description Info Description Info Description"
+      onClose={() => (close2 = false)}
+      show={close2} />
   </Box>
 
   <br />

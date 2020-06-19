@@ -1,6 +1,6 @@
 <script>
-  import Avatar from "../Avatar.svelte";
-  import Button from "../Button.svelte";
+  import Avatar from "../Avatar/Avatar.svelte";
+  import Button from "../Button/Button.svelte";
   export let ghost = false;
   export let backIcon = "arrowLeft";
   export let onBack = undefined;
