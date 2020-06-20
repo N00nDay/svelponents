@@ -7,15 +7,6 @@
 
   import Container from "../../../../demo/Container.svelte";
   import Box from "../../../../demo/Box.svelte";
-  import BadgeWrapper from "../../../../demo/BadgeWrapper.svelte";
-
-  let count = 0;
-  function addCount() {
-    count++;
-  }
-  function subtractCount() {
-    count--;
-  }
 
   let headers = [
     {
