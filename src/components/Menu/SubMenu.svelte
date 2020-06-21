@@ -67,7 +67,7 @@
     submenu.parentNode.parentNode.appendChild(submenu);
   });
 
-  function custom(node, { delay = 0, duration = 200 }) {
+  function custom(node, { delay = 0, duration = 100 }) {
     const o = +getComputedStyle(node).opacity;
     const l = 80;
 

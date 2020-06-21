@@ -176,6 +176,7 @@
   <Box>
 
     <!-- TODO: replace with Input -->
+    <!-- TODO: onclick copy string to clipboard -->
     <input bind:value />
 
     <ul bind:this={list} class="anticons-list">
