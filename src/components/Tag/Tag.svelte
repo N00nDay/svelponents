@@ -12,7 +12,7 @@
   export let onClose = undefined;
 
   let hex = undefined;
-  if ((color && color.charAt(0) === "#") || color.substring(0, 3) === "rgb") {
+  if (color && (color.charAt(0) === "#" || color.substring(0, 3) === "rgb")) {
     style = addStyle({
       style,
       attribute: true,
