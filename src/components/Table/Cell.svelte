@@ -61,16 +61,21 @@
   .right {
     text-align: right;
   }
+  .center {
+    text-align: center;
+  }
 </style>
 
 <div class="item-meta {`col-${width}`}" {style}>
   <div
     class="item-meta-content"
+    class:center={align === 'center'}
     class:right={align === 'right' || type === 'currency' || type === 'number' || type === 'percent' || type === 'date'}>
     {#if content}
       <div
         bind:this={contentEl}
         class="item-meta-description"
+        class:center={align === 'center'}
         class:right={align === 'right' || type === 'currency' || type === 'number' || type === 'percent' || type === 'date'}
         style={contentStyle}>
         {content}
@@ -79,6 +84,7 @@
     {#if Slots}
       <div
         bind:this={contentEl}
+        class:center={align === 'center'}
         class:right={align === 'right' || type === 'currency' || type === 'number' || type === 'percent' || type === 'date'}
         class="item-meta-description"
         style={contentStyle}>

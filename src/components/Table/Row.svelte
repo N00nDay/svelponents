@@ -15,7 +15,7 @@
   export let key = undefined;
   export let item = undefined;
 
-  const { selectable, selected, headers, onSelect } = getContext(CONTEXT);
+  const { selected, headers, onSelect } = getContext(CONTEXT);
 
   let cells = [];
 
@@ -93,14 +93,14 @@
   on:click={handleClick}>
   {#if item}
     {#each cells as cell, i}
-      {#if $headers[i].type !== 'badge'}
+      {#if $headers[i] && $headers[i].type !== 'badge'}
         <Table.Cell
           type={$headers[i].type}
           align={$headers[i].align}
           width={$headers[i].width}
           content={renderContent(cell, $headers[i].type)} />
       {/if}
-      {#if $headers[i].type === 'badge'}
+      {#if $headers[i] && $headers[i].type === 'badge'}
         <Table.Cell type={$headers[i].type} width={$headers[i].width}>
           {#each cell as s (s)}
             <Badge

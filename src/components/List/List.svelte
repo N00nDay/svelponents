@@ -1,32 +1,22 @@
 <script>
   import { CONTEXT } from "./Context.svelte";
-  import { setContext, getContext } from "svelte";
+  import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import ContentLoader from "../ContentLoader/ContentLoader.svelte";
 
   export let bordered = false;
   export let divider = true;
-  export let table = false;
-  export let header = false;
   export let size = undefined;
   export let layout = "horizontal";
   export let loading = false;
   export let style = undefined;
-  export let defaultSortKey = undefined;
-  export let defaultSort = "desc";
   export let selectable = false;
   export let defaultSelectedKey = undefined;
 
-  let sortKey = writable(defaultSortKey);
-  let sort = writable(defaultSort);
   let selected = writable(defaultSelectedKey);
 
   setContext(CONTEXT, {
     selectable,
-    sortKey,
-    sort,
-    table,
-    header,
     selected
   });
 </script>

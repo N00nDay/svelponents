@@ -155,7 +155,7 @@
     class:closable={onClose}
     class:no-icon={!showIcon}
     class:with-description={description}>
-    {#if showIcon}
+    {#if showIcon && type}
       <span class="icon">
         <Icon
           icon={`alert${type.charAt(0).toUpperCase() + type.slice(1)}`}

@@ -4,7 +4,6 @@
   import { writable } from "svelte/store";
   import ContentLoader from "../ContentLoader/ContentLoader.svelte";
 
-  export let selectable = undefined;
   export let hoverable = undefined;
   export let defaultSortKey = null;
   export let defaultSort = undefined;
@@ -43,7 +42,6 @@
   }
 
   setContext(CONTEXT, {
-    selectable,
     sortKey,
     sort,
     selected,

@@ -7,68 +7,36 @@
   import tooltip from "../../utils/tooltip";
   import isEllipsis from "../../utils/isEllipsis";
 
-  export let src = undefined;
-  export let alt = undefined;
+  export let avatar = undefined;
   export let title = undefined;
   export let description = undefined;
   export let style = undefined;
   export let titleStyle = undefined;
   export let descriptionStyle = undefined;
   export let align = "left";
-  export let key = false;
-  export let handleClick = undefined;
-  export let sortable = false;
 
   let titleTip, descriptionTip;
   const Slots = $$props.$$slots;
 
   let titleEl, descriptionEl;
 
-  const { sortKey, sort, table } = getContext(CONTEXT);
-
-  function onClick() {
-    if (sortable) {
-      let order;
-      if ($sortKey === key) {
-        if ($sort === "desc") {
-          sort.set("asc");
-        } else {
-          sort.set("desc");
-        }
-      } else {
-        sort.set("desc");
-        sortKey.set(key);
-      }
-      if (handleClick) {
-        order = $sort === "desc" ? "-" : "";
-        handleClick(order);
-      }
-    }
-  }
-
-  if (src && alt && description && !title) {
+  if (avatar && description && !title) {
     descriptionStyle = addStyle({
       style: descriptionStyle,
       attribute: true,
       string: "height: 32px; line-height: 32px;"
     });
-  } else if (src && alt && !description && title) {
+  } else if (avatar && !description && title) {
     titleStyle = addStyle({
       style: titleStyle,
       attribute: true,
       string: "margin-bottom: 0; height: 32px; line-height: 32px;"
     });
-  } else if (!src && !alt && !description && !sortable && title) {
+  } else if (!avatar && !description && title) {
     titleStyle = addStyle({
       style: titleStyle,
       attribute: true,
       string: "margin-bottom: 0; height: 32px; line-height: 32px;"
-    });
-  } else if (!src && !alt && !description && sortable && title) {
-    titleStyle = addStyle({
-      style: titleStyle,
-      attribute: true,
-      string: "margin-bottom: 0; height: 48px; line-height: 48px;"
     });
   }
 
@@ -77,14 +45,6 @@
       style: titleStyle,
       attribute: true,
       string: "text-align: right;"
-    });
-  }
-
-  if (sortable) {
-    titleStyle = addStyle({
-      style: titleStyle,
-      attribute: true,
-      string: "display: inline-block;"
     });
   }
 
@@ -160,68 +120,28 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .sort {
-    line-height: 48px;
-    margin-left: 8px;
-    vertical-align: top !important;
-  }
-  h4,
-  .sort :global(svg) {
+  h4 {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
-  .sort.asc :global(svg) {
-    -ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    transform-origin: center center;
-  }
-  .sortable {
-    cursor: pointer;
-  }
-  .sortable .active,
-  .sortable:hover h4,
-  .sortable:hover :global(svg) {
-    color: #1890ff;
-  }
   .right {
     text-align: right;
   }
-  .table.item-meta {
-    padding-right: 8px;
-  }
-  .table.item-meta:last-child {
-    padding-right: 0;
-  }
 </style>
 
-<div
-  class="item-meta"
-  class:sortable
-  class:table
-  {style}
-  on:click={sortable ? onClick : undefined}>
-  {#if src && alt}
+<div class="item-meta" {style}>
+  {#if avatar}
     <div class="item-meta-avatar">
-      <Avatar {alt} {src} />
+      <Avatar {...avatar} />
     </div>
   {/if}
   <div class="item-meta-content" class:right={align === 'right'}>
     {#if title}
-      <h4
-        bind:this={titleEl}
-        class="item-meta-title"
-        class:active={$sortKey === key}
-        style={titleStyle}>
+      <h4 bind:this={titleEl} class="item-meta-title" style={titleStyle}>
         {title}
       </h4>
-    {/if}
-    {#if $sortKey === key}
-      <span class="sort {$sort}" class:active={$sortKey === key}>
-        <Icon icon="arrowDown" style="vertical-align: middle;" />
-      </span>
     {/if}
     {#if description}
       <div
@@ -231,10 +151,10 @@
         {description}
       </div>
     {/if}
-    {#if Slots}
+    {#if Slots && !description}
       <div
         bind:this={descriptionEl}
-        class="item-meta-description table-cell"
+        class="item-meta-description"
         style={descriptionStyle}>
         <slot />
       </div>

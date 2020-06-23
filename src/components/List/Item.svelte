@@ -1,5 +1,4 @@
 <script>
-  import addStyle from "../../utils/addStyle";
   import { getContext } from "svelte";
   import { get } from "svelte/store";
   import { CONTEXT } from "./Context.svelte";
@@ -7,15 +6,7 @@
   export let onClick = undefined;
   export let key = null;
 
-  const { selectable, header, selected } = getContext(CONTEXT);
-
-  if (header) {
-    style = addStyle({
-      style,
-      attribute: true,
-      string: "background-color: #f5f5f5;"
-    });
-  }
+  const { selectable, selected } = getContext(CONTEXT);
 
   function handleClick() {
     if (selectable) {

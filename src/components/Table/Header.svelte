@@ -49,6 +49,10 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+  .compact {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
   .heading :global(.back-button) {
     color: #1890ff;
     text-decoration: none;

@@ -97,9 +97,6 @@
       const d = actual_height - expected_height;
       simpleBar.scrollY(scrollTop + d);
     }
-    // TODO if we overestimated the space these
-    // rows would occupy we may need to add some
-    // more. maybe we can just call handle_scroll again?
   }
   let simpleBar,
     init = false;
